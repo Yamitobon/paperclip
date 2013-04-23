@@ -1,0 +1,17 @@
+<%= simple_form_for @persona, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+
+ <%= f.file_field :avatar %>
+
+  <%= f.input :nombre %>
+  <%= image_tag @persona.avatar.url(:small) %>
+  <%= f.input :identificacion %>
+  <%= f.input :email %>
+  <%= f.input :fch_ncto %>
+  <%= f.input :telefono %>
+  <%= f.input :municipio %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                personas_path, :class => 'btn' %>
+  </div>
+<% end %>
